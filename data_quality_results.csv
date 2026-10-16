@@ -1,0 +1,10 @@
+check,dimension,failed_count,row_count,failure_rate_pct,threshold_pct,severity,status,action,details
+Completeness — order_id non-null,completeness,0,12,0.0,1.0,High,PASS,Quarantine affected rows; notify Data Owner if threshold exceeded.,Column=order_id
+Completeness — order_date non-null,completeness,1,12,8.3333,1.0,High,FAIL,Quarantine affected rows; notify Data Owner if threshold exceeded.,Column=order_date
+Completeness — quantity non-null,completeness,0,12,0.0,1.0,High,PASS,Quarantine affected rows; notify Data Owner if threshold exceeded.,Column=quantity
+Uniqueness — order ID duplicate diagnostic,uniqueness,2,12,16.6667,100.0,Medium,PASS,Order IDs may legitimately repeat across line items; review before treating as a failure.,Order ID alone is not necessarily a unique row key.
+Validity — quantity numeric and > 0,validity,2,12,16.6667,0.5,High,FAIL,Quarantine rows with nonnumeric or non-positive quantity; confirm returns/refunds policy.,"If negative quantities encode returns, define a separate approved rule."
+Validity — unit_price numeric and >= 0,validity,0,12,0.0,0.5,High,PASS,Quarantine invalid prices and investigate source-system mapping.,
+Validity — order_date parseable date,validity,3,12,25.0,0.5,High,FAIL,Quarantine unparseable dates; confirm source format and locale.,
+Consistency — order_date not in future,consistency,0,12,0.0,0.1,Medium,PASS,"Check timezone, source clock, and date parsing; correct only from source evidence.",
+Freshness — latest order date <= 3 days old,freshness,1,12,100.0,0.0,High,FAIL,"If a production feed is expected, alert Data Engineering and Retail Operations; for a historical starter file, document that it is a static sample.",Latest date=2026-01-18 00:00:00; age_days=271

@@ -1,0 +1,10 @@
+column,dtype,row_count,missing_count,missing_pct,distinct_count,distinct_pct,sample_values
+order_id,object,12,0,0.0,11,91.667,"RT-1001, RT-1002, RT-1003"
+order_date,object,12,1,8.333,10,83.333,"2026-01-03, 03/01/2026, 2026-01-05"
+customer_segment,object,12,0,0.0,4,33.333,"Student, Fresher, student"
+city,object,12,1,8.333,7,58.333,"Chennai, Bengaluru, Chennai"
+category,object,12,0,0.0,3,25.0,"Learning Kit, Course Access, Course Access"
+quantity,object,12,0,0.0,5,41.667,"2, 1, 1"
+unit_price,int64,12,0,0.0,3,25.0,"799, 1499, 1499"
+discount_pct,float64,12,1,8.333,5,41.667,"10.0, 0.0, 5.0"
+payment_status,object,12,0,0.0,5,41.667,"Paid, paid, Pending"
