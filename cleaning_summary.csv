@@ -1,0 +1,5 @@
+Metric,Before Cleaning,After Cleaning
+Rows,12000,12000
+Columns,9,13
+Missing values,3035,0
+Exact duplicate rows,0,0
